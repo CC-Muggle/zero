@@ -1,0 +1,15 @@
+/target/
+.bak
+tree.log
+/logs-*/
+# logs
+/stacktrace.log
+/test/reports
+/logs
+*.log
+*.log.*
+/.setting/
+*.project
+*.classpath
+
+

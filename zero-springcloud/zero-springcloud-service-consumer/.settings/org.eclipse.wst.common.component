@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="zero-springcloud-service-consumer-1.0.0">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <dependent-module archiveName="zero-springcloud-ribbon-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/zero-springcloud-ribbon/zero-springcloud-ribbon">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zero-springcloud-feign-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/zero-springcloud-feign/zero-springcloud-feign">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zero-springcloud-hystrix-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/zero-springcloud-hystrix/zero-springcloud-hystrix">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="zero-springcloud-service-consumer"/>
+        <property name="java-output-path" value="/zero-springcloud-service-consumer/target/classes"/>
+    </wb-module>
+</project-modules>
