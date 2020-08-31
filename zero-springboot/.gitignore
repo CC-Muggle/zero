@@ -8,7 +8,7 @@ tree.log
 /logs
 *.log
 *.log.*
-/.setting/
+/.settings/
 *.project
 *.classpath
 
