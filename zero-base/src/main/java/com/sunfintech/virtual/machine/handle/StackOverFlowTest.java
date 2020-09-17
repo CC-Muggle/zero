@@ -1,11 +1,21 @@
 package com.sunfintech.virtual.machine.handle;
 
+/**
+ * 验证栈内存溢出
+ *
+ * 错误类型：java.lang.StackOverflowError
+ * 异常原因：在有限的栈区域创建非常多的引用，导致栈内存溢出
+ * 
+ * @author yangcj
+ *
+ */
 public class StackOverFlowTest {
 
     private int stackLength = 1;
     
     /**
      * 无限递归,大量创建栈帧导致栈溢出
+     * 
      */
     public void stackLeak() {
         this.setStackLength(this.getStackLength() + 1);

@@ -3,7 +3,7 @@ package com.sunfintech.base.collections;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestListCollection {
+public class ListValidation {
 
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<Integer>();

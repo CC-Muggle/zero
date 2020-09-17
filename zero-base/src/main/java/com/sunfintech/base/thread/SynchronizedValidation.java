@@ -10,6 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 
  * 1.修饰类型的范围
  * 2.双重锁校验demo
+ * 
  * @author coddl
  *
  */
@@ -55,7 +56,7 @@ class Student{
      * 未设置然后就被其他线程获取了
      * 
      * 修正一下synchronize概念，对synchronized而言，参与了竞争才会被阻塞，但是不参与竞争的还是没有被阻塞
-     * 当被其他线程运行阻塞了以后，会进行对象锁的释放，此时就会非常危险，虽然执行顺序有保证，但是原子性就没法保证了
+     * 当被其他线程运行阻塞了以后（不会释放对象锁），此时就会非常危险，虽然执行顺序有保证，但是原子性就没法保证了
      * 
      * 说下为什么添加volatile关键字，由于synchronized只对竞争锁进行了单线程操作，也就是说在块内还是会进行重排序的
      * 那么，由于该情况下其他线程可能不参与锁竞争，所以一旦重排序就可能产生new对象时有了引用还没有对引用生成对应的资源
@@ -79,13 +80,10 @@ class Student{
 //                        e.printStackTrace();
 //                    }
                     
-                    student.classroom = "3年2班";
+                    student.classroom = Thread.currentThread().getName();
+                    System.out.println("----------------------synchronize这玩意有重排序吗-----------------------------，当前线程：" + Thread.currentThread().getName());
                 }
-                
-                System.out.println("----------------------synchronize这玩意有重排序吗-----------------------------，当前线程：" + Thread.currentThread().getName());
             }
-            
-            student.age = new AtomicInteger(18);
         }
         return student;
     }

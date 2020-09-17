@@ -145,5 +145,6 @@
 		<module>zero-springcloud</module>
 
 		<module>zero-alibabacloud</module>
+		<module>zero-message-queue</module>
 	</modules>
 </project>
