@@ -9,8 +9,7 @@ tree.log
 *.log
 *.log.*
 /.settings/
-*.hprof
 *.project
 *.classpath
-
-
+*.iml
+/.idea/
