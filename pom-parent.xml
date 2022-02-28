@@ -44,5 +44,6 @@
 
 	<modules>
 		<module>zero-springboot</module>
-	</modules>
+        <module>zero-netty</module>
+    </modules>
 </project>
