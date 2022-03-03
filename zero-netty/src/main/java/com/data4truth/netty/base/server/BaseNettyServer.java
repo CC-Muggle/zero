@@ -19,6 +19,7 @@ import java.nio.charset.Charset;
  * 1.创建boss和worker线程，boss线程用于接收和转发，worker线程注重于业务处理
  * 2.创建启动管道，为管道添加处理信息的节点，即责任链
  * 3.启动服务，并将服务暴露到指定端口，等待端口访问
+ * 4.可以使用telnet进行测试。telnet到指定端口上，ctrl+]进入操作界面，使用send指令发送消息
  *
  */
 public class BaseNettyServer {
@@ -82,10 +83,10 @@ public class BaseNettyServer {
                 });
 
         try {
-            // 服务绑定端口并监听内容
+            // 服务绑定端口并监听内容，sync方法会阻塞直到服务启动绑定完成
             ChannelFuture channelFuture = bootstrap.bind(8900).sync();
             System.out.println("the server has been started");
-            // 异步返回结果
+            // 获取到channel要关闭的通知并阻塞当前线程直到channel被关闭，来自sync方法
             channelFuture.channel().closeFuture().sync();
 
         } catch (InterruptedException e) {
