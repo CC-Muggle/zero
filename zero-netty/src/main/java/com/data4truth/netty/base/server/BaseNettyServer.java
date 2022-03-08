@@ -6,8 +6,6 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.string.StringDecoder;
-import io.netty.handler.codec.string.StringEncoder;
 
 import java.nio.charset.Charset;
 
@@ -46,7 +44,7 @@ public class BaseNettyServer {
                         // 在管道新增节点处理
                         ChannelPipeline pipeline = channel.pipeline();
 
-                        // 输入集
+                        // 入站责任链，simple相较于adapter多了对请求的过滤和完成read以后会释放入参参数
                         pipeline.addLast(new SimpleChannelInboundHandler<ByteBuf>() {
 
                             @Override
