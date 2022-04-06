@@ -5,11 +5,30 @@
 
 
 -- 事务A
-begin
+begin;
 
-select a,b,d from e4 where d between '2020-08-15' and '2020-09-07' for update;
+-- 查询id为8-10的数据进行上锁
+select * from test_innodb_engin where id between 8 and 10 for update;
 
-commit
+-- 查询是否存在id为9的数据
+select * from test_innodb_engin where id = 9;
+
+-- 事务中插入一条数据，该数据已经被其他事务所插入，则会产生幻读
+INSERT INTO `test`.`test_innodb_engin`(`id`, `a`, `b`, `c`) VALUES (12, 12, 12, '12');
+
+-- 查询是否存在id为9的数据
+select * from test_innodb_engin where id = 9;
+
+commit;
+
+
+
+
+
 
 -- 事务B
-insert into e4 select 8,8,'2020-09-03'
+begin;
+
+INSERT INTO `test`.`test_innodb_engin`(`id`, `a`, `b`, `c`) VALUES (9, 9, 9, '9');
+
+commit;

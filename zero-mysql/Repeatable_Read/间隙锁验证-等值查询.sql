@@ -4,14 +4,15 @@
 -- 产生原因：执行事务A为等值查询，会对一个范围进行上锁，而这个锁的范围是通过主键进行确认的，在主键和主键的空隙之间加上锁，一旦超出了范围，就可以进行插入
 
 -- 事务A
-begin
+begin;
 
-select a,b,d from e4 where b = 8 for update;
+select * from test_innodb_engin where id = 9 for update;
 
-commit
 
--- 事务B
-insert into e4 select 11,11,'2020-11-01'
+INSERT INTO `test`.`test_innodb_engin`(`id`, `a`, `b`, `c`) VALUES (11, 11, 11, '11');
+
+commit;
+
 
 -- 事务C
-insert into e4 select 9,9,'2020-11-01'
+INSERT INTO `test`.`test_innodb_engin`(`id`, `a`, `b`, `c`) VALUES (10, 10, 10, '10');
