@@ -4,6 +4,9 @@ import org.springframework.context.annotation.Configuration;
 
 import feign.Logger;
 
+/**
+ * @author yangcj
+ */
 @Configuration
 public class FeignConfiguration {
 
