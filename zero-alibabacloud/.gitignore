@@ -5,7 +5,8 @@ tree.log
 # logs
 /stacktrace.log
 /test/reports
-/logs
+**/logs
+**/data
 *.log
 *.log.*
 /.settings/
