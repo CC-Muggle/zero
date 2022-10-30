@@ -4,21 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.sunfintech</groupId>
-		<artifactId>zero-springcloud</artifactId>
+		<artifactId>zero-alibabacloud</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<artifactId>zero-springcloud-service-provider</artifactId>
-
+	<artifactId>zero-alibabacloud-consumer</artifactId>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.sunfintech</groupId>
-			<artifactId>zero-springcloud-feign</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.sunfintech</groupId>
-			<artifactId>zero-springcloud-hystrix</artifactId>
-		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -28,14 +20,26 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
 
 		<dependency>
-			<groupId>com.fasterxml.jackson.dataformat</groupId>
-			<artifactId>jackson-dataformat-xml</artifactId>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-dubbo</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+		</dependency>
+		<!-- 不要用内置的spring-context-support √8发版的时候压根没把这玩意deploy上去 -->
+		<dependency>
+			<groupId>com.alibaba.spring</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>1.0.11</version>
+		</dependency>
+		
+		<!-- project -->
+		<dependency>
+			<groupId>com.sunfintech</groupId>
+			<artifactId>zero-alibabacloud-api</artifactId>
 		</dependency>
 
 	</dependencies>

@@ -1,13 +1,38 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <modules>
-    <module>zero-alibabacloud-worker</module>
-  </modules>
-  <parent>
-    <groupId>com.sunfintech</groupId>
-    <artifactId>zero</artifactId>
-    <version>1.0.0</version>
-  </parent>
-  <artifactId>zero-alibabacloud</artifactId>
-  <packaging>pom</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<modules>
+		<module>zero-alibabacloud-api</module>
+		<module>zero-alibabacloud-consumer</module>
+		<module>zero-alibabacloud-provider</module>
+	</modules>
+	<parent>
+		<groupId>com.sunfintech</groupId>
+		<artifactId>zero</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>zero-alibabacloud</artifactId>
+	<packaging>pom</packaging>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.sunfintech</groupId>
+				<artifactId>zero-alibabacloud-provider</artifactId>
+				<version>${project.parent.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sunfintech</groupId>
+				<artifactId>zero-alibabacloud-consumer</artifactId>
+				<version>${project.parent.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sunfintech</groupId>
+				<artifactId>zero-alibabacloud-api</artifactId>
+				<version>${project.parent.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
 </project>
