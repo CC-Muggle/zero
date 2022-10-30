@@ -14,6 +14,7 @@ import java.util.List;
  */
 public class OutOfMemoryTest {
 
+
     /**
      * 测试堆溢出通过OutOfMemoryError把对应的日志详细信息dump出来
      * 
