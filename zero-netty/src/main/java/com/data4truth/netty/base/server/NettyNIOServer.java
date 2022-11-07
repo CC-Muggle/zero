@@ -9,6 +9,11 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketAddress;
 import java.nio.charset.Charset;
 
 /**
@@ -19,7 +24,8 @@ import java.nio.charset.Charset;
  */
 public class NettyNIOServer {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
         final ByteBuf buf = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer("hello NIO", Charset.defaultCharset()));
 
         EventLoopGroup group = new NioEventLoopGroup();

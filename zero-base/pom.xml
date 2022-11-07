@@ -6,6 +6,15 @@
 	<artifactId>zero-base</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<dependencies>
+		<dependency>
+			<groupId>co.paralleluniverse</groupId>
+			<artifactId>quasar-core</artifactId>
+			<version>0.7.10</version>
+			<classifier>jdk8</classifier>
+		</dependency>
+	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
