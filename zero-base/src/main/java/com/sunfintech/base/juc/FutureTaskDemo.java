@@ -1,13 +1,7 @@
 package com.sunfintech.base.juc;
 
 import java.util.Objects;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.FutureTask;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.*;
 
 /**
  * 
@@ -40,7 +34,7 @@ public class FutureTaskDemo {
 	 * @throws ExecutionException
 	 */
 	private static void testCompletableFuture() throws InterruptedException, ExecutionException {
-		ExecutorService executorService = Executors.newFixedThreadPool(10);
+		ExecutorService executorService = new ThreadPoolExecutor(10, 20, 1000, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>());
 		CompletableFuture<Integer> completableFuture = CompletableFuture.supplyAsync(() -> {
 			System.out.println(Thread.currentThread().getName());
 			try {
@@ -65,6 +59,8 @@ public class FutureTaskDemo {
 		});
 
 		System.out.println(Thread.currentThread().getName() + "线程先去忙别的了");
+
+		System.out.println("completableFuture最终结果" + completableFuture.join());
 		executorService.shutdown();
 	}
 

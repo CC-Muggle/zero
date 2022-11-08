@@ -65,6 +65,11 @@ public class CoroutinesDemo {
         System.out.println("协程消耗时间：" + (System.currentTimeMillis() - startTime) + "ms");
     }
 
+    /**
+     * 创建协程域线程共同使用
+     * @param count
+     * @throws InterruptedException
+     */
     public static void testUnion(int count) throws InterruptedException {
         final CountDownLatch latch = new CountDownLatch(count);
         long startTime = System.currentTimeMillis();

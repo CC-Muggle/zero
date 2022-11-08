@@ -1,4 +1,4 @@
-package com.sunfintech.virtual.machine.handle;
+package com.sunfintech.hotspot.handle;
 
 /**
  * 验证栈内存溢出

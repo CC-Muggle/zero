@@ -1,4 +1,4 @@
-package com.sunfintech.virtual.machine.handle;
+package com.sunfintech.hotspot.handle;
 
 import java.util.ArrayList;
 import java.util.List;
