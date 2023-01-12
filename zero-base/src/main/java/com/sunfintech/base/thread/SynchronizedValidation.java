@@ -7,11 +7,16 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 验证synchronized关键字的作用
  * 
  * synchronized同步锁，又称对象锁也就是被wait释放的锁，没有竞争就没有阻塞
+ * 总结：线程访问资源类
+ * 
+ * synchronized为什么可以为所有的对象上锁：
+ * 		因为每个对象本省会带有一个ObjectMonitor的一个对象，他就是这个对象本身的锁
+ *      monitor中会记录该对象一些头相关信息，例如，锁，wait集合，重入（同一线程在持有锁的情况下反复获取锁）次数
  * 
  * 1.修饰类型的范围
  * 2.双重锁校验demo
  * 
- * @author coddl
+ * @author yangcj
  *
  */
 public class SynchronizedValidation {
