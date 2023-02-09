@@ -1,5 +1,16 @@
 package com.sunfintech.base.thread;
 
+
+/**
+ * 
+ * 
+ * 线程基础入门
+ * 
+ * 
+ * 
+ * @author yangcj
+ *
+ */
 public class ThreadBaseDemo {
 
     public static void main(String[] args) {

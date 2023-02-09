@@ -7,6 +7,17 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
+
+		<!-- java object layout 观测对象内容小工具 -->
+		<dependency>
+			<groupId>org.openjdk.jol</groupId>
+			<artifactId>jol-core</artifactId>
+			<version>0.16</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- 引入协程JDK8版 -->
 		<dependency>
 			<groupId>co.paralleluniverse</groupId>
 			<artifactId>quasar-core</artifactId>

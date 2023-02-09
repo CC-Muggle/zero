@@ -5,8 +5,25 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 验证volatile轻量级同步方法
  * 1. volatile能够保证在JMM规范中的可见性,是的其他线程能够及时同步
- * 2. volatile无法保证原子性,但是synchronized
+ * 2. volatile无法保证原子性,但是synchronized可以禁止
  * 3. volatile会禁止运行时的重排序
+ * 
+ * 
+ * volatile如何保证可见性和禁止重排序的
+ * 
+ * 1.通过内存屏障（读屏障、写屏障）进行禁止重排序
+ * 2.写屏障会让写入工作内存的东西及时刷新到主内存中，这样就能通过总线嗅探机制及时通知到各个线程让其刷新工作内存
+ * 
+ * volatile是如何添加内存屏障的
+ * 被volatile修饰的变量在底层会被加上一个ACC_VOLATILE，会在指定的代码段加上内存屏障
+ * 
+ * 
+ * 小tips：
+ * 对象实例化需要三个过程
+ * 
+ * 1.分配内存空间（memory = allocate()）
+ * 2.初始化对象（ctorInstance(memory)）
+ * 3.引用指向对应得内存空间（instance = memory）
  * 
  * @author yangcj
  *
@@ -79,7 +96,7 @@ public class VolatileDemo {
             }, "Thread-volatile-atomicity-" + i).start();
         }
         
-        // Thread.activeCount()代表当前活动线程数,除了主线程和后台GC线程,其他都问新增线程
+        // Thread.activeCount()代表当前活动线程数,除了主线程和后台GC线程,其他都为新增线程
         while (Thread.activeCount() > 2) {
             // 运行中的主线程采取礼让,让其他线程先执行
             Thread.yield();
