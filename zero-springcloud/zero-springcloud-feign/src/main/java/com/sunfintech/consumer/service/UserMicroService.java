@@ -11,5 +11,5 @@ import com.sunfintech.consumer.service.fallback.UserFallbackServiceImpl;
 public interface UserMicroService {
 
     @GetMapping(value = "/user/getUser", produces = "application/json;charset=UTF-8")
-    public UserDTO getUser(@RequestParam("id") String id);
+    UserDTO getUser(@RequestParam("id") String id);
 }
