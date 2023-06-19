@@ -147,5 +147,6 @@
 		<module>zero-alibabacloud</module>
 		<module>zero-message-queue</module>
 		<module>zero-alibabacloud/zero-alibabacloud-rocketmq</module>
-	</modules>
+        <module>zero-bigdata</module>
+    </modules>
 </project>
