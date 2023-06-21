@@ -104,22 +104,10 @@
 					<version>${maven.shade.version}</version>
 					<executions>
 						<execution>
-							<phase>package</phase>
 							<goals>
 								<goal>shade</goal>
 							</goals>
 							<configuration>
-								<transformers>
-									<!-- 设置主启动类，使用java -jar是的main路径 -->
-									<!-- <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"> <mainClass>com.sunfintech.dubbo.startup.DubboProvider</mainClass> 
-										</transformer> -->
-									<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-										<resource>META-INF/spring.handlers</resource>
-									</transformer>
-									<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-										<resource>META-INF/spring.schemas</resource>
-									</transformer>
-								</transformers>
 								<filters>
 									<filter>
 										<artifact>*:*</artifact>
