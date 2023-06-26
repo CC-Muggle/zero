@@ -1,10 +1,14 @@
 package com.solax.power.service;
 
-import com.solax.power.entity.User;
-import com.solax.power.model.res.ResUserDTO;
+import com.solax.power.model.req.ReqUserAddDTO;
+import com.solax.power.model.res.ResUserDetailDTO;
+
+import java.util.List;
 
 public interface UserService {
 
-    ResUserDTO getUser(String account, String password);
+    List<ResUserDetailDTO> listUser();
+
+    void addUser(ReqUserAddDTO dto);
 
 }
