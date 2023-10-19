@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.sunfintech</groupId>
+        <artifactId>zero-rule-engine</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <groupId>com.solax.thingsboard</groupId>
+    <artifactId>zero-thingsboard-engine</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>rule-engine-api</module>
+        <module>rule-engine-components</module>
+        <module>rule-engine-server</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- google相关 -->
+        <google.grpc.proto.version>2.22.1</google.grpc.proto.version>
+        <google.cloud.pubsub.version>1.123.18</google.cloud.pubsub.version>
+
+        <!-- oracle-java相关 -->
+        <oracle.jakarta.mail.version>2.0.1</oracle.jakarta.mail.version>
+
+        <!-- jackson相关 -->
+        <jackson.version>2.15.2</jackson.version>
+
+        <!-- netty相关 -->
+        <netty.version>4.1.90.Final</netty.version>
+        <netty.ssl.version>2.0.52.Final</netty.ssl.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.solax.thingsboard</groupId>
+                <artifactId>rule-engine-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.solax.thingsboard</groupId>
+                <artifactId>rule-engine-components</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.solax.thingsboard</groupId>
+                <artifactId>rule-engine-server</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.google.cloud</groupId>
+                <artifactId>google-cloud-pubsub</artifactId>
+                <version>${google.cloud.pubsub.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.api.grpc</groupId>
+                <artifactId>proto-google-common-protos</artifactId>
+                <version>${google.grpc.proto.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-tcnative-boringssl-static</artifactId>
+                <version>${netty.ssl.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>jakarta.mail</artifactId>
+                <version>${oracle.jakarta.mail.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+
+</project>
