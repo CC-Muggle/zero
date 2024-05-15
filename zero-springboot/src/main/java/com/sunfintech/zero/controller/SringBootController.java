@@ -20,4 +20,9 @@ public class SringBootController {
 		map.put("word", "Hello World");
 		return map;
 	}
+
+
+	public void testProxy(){
+
+	}
 }

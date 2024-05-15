@@ -147,5 +147,6 @@
 		<module>zero-alibabacloud/zero-alibabacloud-rocketmq</module>
         <module>zero-bigdata</module>
         <module>zero-rule-engine</module>
-	</modules>
+        <module>zoro-document</module>
+    </modules>
 </project>

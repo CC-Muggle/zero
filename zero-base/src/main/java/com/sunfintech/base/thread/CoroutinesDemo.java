@@ -23,7 +23,7 @@ public class CoroutinesDemo {
     }
 
     public static void testThread(int count) throws InterruptedException {
-        ExecutorService executorService = Executors.newFixedThreadPool(100);
+        ExecutorService executorService = new ThreadPoolExecutor(10,20,60000,TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>());
         final CountDownLatch latch = new CountDownLatch(count);
         long startTime = System.currentTimeMillis();
         for (int a = 0; a < count; a++){
