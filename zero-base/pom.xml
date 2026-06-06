@@ -17,13 +17,6 @@
 		</dependency>
 
 
-		<!-- 引入协程JDK8版 -->
-		<dependency>
-			<groupId>co.paralleluniverse</groupId>
-			<artifactId>quasar-core</artifactId>
-			<version>0.7.10</version>
-			<classifier>jdk8</classifier>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -32,8 +25,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<release>21</release>
+					
+					
 					<showWarnings>true</showWarnings>
 				</configuration>
 			</plugin>

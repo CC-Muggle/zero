@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.sunfintech</groupId>
+	<groupId>com.github</groupId>
 	<artifactId>zero</artifactId>
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
@@ -9,22 +9,22 @@
 	<description>This is my zero start series</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>21</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- maven插件相关版本 -->
-		<maven.compiler.version>3.8.1</maven.compiler.version>
-		<maven.surefire.version>2.22.2</maven.surefire.version>
-		<maven.resources.version>3.1.0</maven.resources.version>
-		<maven.shade.version>3.2.2</maven.shade.version>
-		<maven.deploy.version>3.1.1</maven.deploy.version>
+		<maven.compiler.version>3.12.1</maven.compiler.version>
+		<maven.surefire.version>3.2.5</maven.surefire.version>
+		<maven.resources.version>3.3.1</maven.resources.version>
+		<maven.shade.version>3.5.1</maven.shade.version>
+		<maven.deploy.version>3.1.2</maven.deploy.version>
 
 		<!-- jar包依赖版本 -->
-		<springboot.version>2.3.12.RELEASE</springboot.version>
-		<springcloud.version>Hoxton.SR12</springcloud.version>
+		<springboot.version>4.0.6</springboot.version>
+		<springcloud.version>2025.1.1</springcloud.version>
 
-		<druid.version>1.1.23</druid.version>
-		<alibabacloud.version>2.2.7.RELEASE</alibabacloud.version>
+		<druid.version>1.2.24</druid.version>
+		<alibabacloud.version>2025.1.0.0</alibabacloud.version>
 	</properties>
 
 	<!-- 依赖管理 -->
@@ -75,8 +75,7 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>${maven.compiler.version}</version>
 					<configuration>
-						<source>${java.version}</source>
-						<target>${java.version}</target>
+						<release>${java.version}</release>
 						<showWarnings>true</showWarnings>
 					</configuration>
 				</plugin>
@@ -148,5 +147,6 @@
         <module>zero-bigdata</module>
         <module>zero-rule-engine</module>
         <module>zoro-document</module>
+	        <module>zero-langchain4j</module>
     </modules>
 </project>
